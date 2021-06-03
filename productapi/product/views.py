@@ -60,26 +60,3 @@ def emails_list(request):
     return HttpResponse(product_list)
 
 
-#paso 1
-'''def emails_list(request):
-    products = list(Product.objects.all())
-    product_list = '\b CustomerID   ProductName   Domain   EmailDate   \n';
-    if products:
-        for product in products:
-            mail_date = add_months(product.StartDate, product.Duration)
-            if product.ProductName == 'domain':
-                calculated_mail_date = mail_date - timedelta(2)
-                product_list += product.CustomerId + '   ' +  product.ProductName + '   ' + product.Domain + '   ' + str(calculated_mail_date) + '\n'
-            if product.ProductName == 'hosting':
-                activated_mail_date = product.StartDate + timedelta(1)
-                product_list += product.CustomerId + '   ' +  product.ProductName + '   ' + product.Domain + '   ' + str(activated_mail_date) + '\n'
-                expiration_mail_date = mail_date - timedelta(3)
-                product_list += product.CustomerId + '   ' +  product.ProductName + '   ' + product.Domain + '   ' + str(expiration_mail_date) + '\n'
-            if product.ProductName == 'pdomain':
-                expiration_mail_date_1 = mail_date - timedelta(9)
-                product_list += product.CustomerId + '   ' +  product.ProductName + '   ' + product.Domain + '   ' + str(expiration_mail_date_1) + '\n'
-                expiration_mail_date_2 = mail_date - timedelta(2)
-                product_list += product.CustomerId + '   ' +  product.ProductName + '   ' + product.Domain + '   ' + str(expiration_mail_date_2) + '\n'
-    else:
-        print('vacio')
-    return HttpResponse(product_list)'''
