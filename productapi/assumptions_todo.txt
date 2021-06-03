@@ -1,0 +1,28 @@
+The code is made in python, using django and django rest framework
+All the requirements for to run the application can be found in the "requirements.txt" file.
+The code will persist the data in a sqlite db
+
+Endpoints to consume the api via Postman, running on development server in 127.0.0.1:8080
+
+
+Create Product:
+
+[POST] http://localhost:8000/product/
+The endpoint will create a new product, for Postman expects a json in the body with a raw encoding and with the following format:
+{
+    "CustomerId": "Cust4567",
+    "ProductName": "hosting",
+    "Domain": "la111.net",
+    "StartDate": "2021-12-31",    
+    "Duration":12
+}
+[DELETE] http://localhost:8000/product/
+The endpoint will delete a producto, for Postman expects a json in the body with a raw encoding and with the following format:
+{
+    "CustomerId": "Cust1234",
+    "ProductName": "hosting",
+    "Domain": "lalala.net"
+}
+
+[GET] http://localhost:8000/list/
+The endpoint will bring a list of scheduled email (sorted by date)
