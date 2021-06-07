@@ -32,7 +32,6 @@ def build_item(product, mail_date):
 
 def emails_list(request):
     items=[]
-    product_listfinal_list=''
     products = list(Product.objects.all())
     product_list = 'CustomerID   ProductName   Domain   EmailDate  \n';
     if products:
@@ -56,7 +55,6 @@ def emails_list(request):
             product_list += item['CustomerId'] + ' | ' +  item['ProductName'] + ' | ' + item['Domain'] + ' | ' + item['mail_date'] + '\n'
     else:
         print('no products')
-        
     return HttpResponse(product_list)
 
 
